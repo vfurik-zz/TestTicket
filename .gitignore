@@ -1,0 +1,8 @@
+.idea/
+.gradle/
+build/
+out/
+src/test/resources/
+*.jar
+!gradle-wrapper.jar
+debug.log
