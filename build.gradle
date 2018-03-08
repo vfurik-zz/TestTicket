@@ -1,0 +1,29 @@
+group 'GI'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+[ compileJava, compileTestJava ]*.options*.encoding = 'UTF-8'
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.codeborne', name: 'selenide', version: '4.10.01'
+    compile group: 'org.testng', name: 'testng', version: '6.14.2'
+    compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+}
+
+test {
+
+    useTestNG() {
+        suites "testng.xml"
+        useDefaultListeners = true
+    }
+
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.6'
+}
